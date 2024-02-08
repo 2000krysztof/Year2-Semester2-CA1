@@ -8,4 +8,23 @@ public class MainViewController {
     protected void selectImageFromFile(){
 
     }
+
+    @FXML
+    protected void revertImage(){
+
+    }
+    @FXML
+    protected void toBlackAndWhite(){
+
+    }
+
+   @FXML
+   protected void  addPill(){
+
+   }
+
+   @FXML
+   protected void colorDisjoints(){
+
+   }
 }

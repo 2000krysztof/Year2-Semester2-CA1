@@ -17,6 +17,10 @@
     <ImageView fx:id="imageView"/>
     <ComboBox fx:id="selectedImage"/>
     <Button text="Select Image" onAction="#selectImageFromFile"/>
+    <Button text="Revert Image" onAction="#revertImage"/>
+    <Button text="To Black and White" onAction="#toBlackAndWhite"/>
+    <Button text="Color Disjoints" onAction="#colorDisjoints"/>
 
+    <Button text="Add Pill" onAction="#addPill"/>
 </VBox>
 
