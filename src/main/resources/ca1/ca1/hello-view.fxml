@@ -14,9 +14,9 @@
     </padding>
 
 
-    <ImageView fx:id="imageView"/>
-    <ComboBox fx:id="selectedImage"/>
-    <Button text="Select Image" onAction="#selectImageFromFile"/>
+    <ImageView fx:id="imageView" fitWidth="300" fitHeight="300"/>
+    <ComboBox fx:id="imageSelectComboBox"/>
+    <Button text="Select Image" onAction="#addImageFromFile"/>
     <Button text="Revert Image" onAction="#revertImage"/>
     <Button text="To Black and White" onAction="#toBlackAndWhite"/>
     <Button text="Color Disjoints" onAction="#colorDisjoints"/>

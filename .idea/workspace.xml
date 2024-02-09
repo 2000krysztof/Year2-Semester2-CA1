@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="Clean up the initial UI files">
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="Create the basic layout for the buttons and the associated functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/hello-view.fxml" afterDir="false" />
@@ -29,9 +29,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2c5ACWDTBJij1nyFl5w2uRruT55" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -45,7 +45,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Ui",
+    "git-widget-placeholder": "basicFuncitons",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
