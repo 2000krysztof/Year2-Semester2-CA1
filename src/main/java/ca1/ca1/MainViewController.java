@@ -44,7 +44,7 @@ public class MainViewController {
 
     @FXML
     protected void revertImage(){
-
+        imageView.setImage(selectedImage);
     }
     @FXML
     protected void toBlackAndWhite(){
