@@ -3,6 +3,7 @@ package ca1.ca1;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -25,6 +26,9 @@ public class MainViewController {
 
     @FXML
     ComboBox<Image> imageSelectComboBox;
+
+    @FXML
+    TextField pillName;
     Image selectedImage;
     @FXML
     protected void initialize(){
@@ -90,6 +94,7 @@ public class MainViewController {
        circle.setStroke(Color.gray(0.5));
        circle.setStrokeWidth(2);
        circle.setManaged(false);
+
        StackPane stackPane = new StackPane(circle);
        stackPane.backgroundProperty().setValue(Background.EMPTY);
        circleStage.setScene(new Scene(stackPane, 45, 45, Color.TRANSPARENT));

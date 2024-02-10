@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="Change the Ui so that it uses HBoxes and create the ImageAnalyzer class">
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="add color picker to the project so I can sample to the image by clicking on it">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/hello-view.fxml" afterDir="false" />
     </list>
@@ -116,7 +115,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707492927523</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add color picker to the project so I can sample to the image by clicking on it">
+      <option name="closed" value="true" />
+      <created>1707575219661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707575219661</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -124,6 +131,7 @@
     <MESSAGE value="Clean up the initial UI files" />
     <MESSAGE value="Add the Image loading functionality. Make the image of size 300 x 300." />
     <MESSAGE value="Change the Ui so that it uses HBoxes and create the ImageAnalyzer class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change the Ui so that it uses HBoxes and create the ImageAnalyzer class" />
+    <MESSAGE value="add color picker to the project so I can sample to the image by clicking on it" />
+    <option name="LAST_COMMIT_MESSAGE" value="add color picker to the project so I can sample to the image by clicking on it" />
   </component>
 </project>

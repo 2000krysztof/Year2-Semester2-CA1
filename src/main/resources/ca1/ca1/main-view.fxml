@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
 <VBox alignment="CENTER" spacing="5.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="ca1.ca1.MainViewController">
     <padding>
@@ -25,6 +26,11 @@
         </VBox>
         <VBox>
             <Button text="Add Pill" onAction="#addPill"/>
+            <HBox>
+                <Label text="Pill Name"/>
+                <TextField fx:id="pillName"/>
+            </HBox>
+
         </VBox>
     </HBox>
 
