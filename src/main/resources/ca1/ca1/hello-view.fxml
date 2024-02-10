@@ -14,7 +14,7 @@
         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
     </padding>
 
-    <ImageView fx:id="imageView" fitWidth="300" fitHeight="300"/>
+    <ImageView fx:id="imageView" fitWidth="300" fitHeight="300" onMouseClicked="#chooseColor"/>
     <HBox alignment="CENTER">
         <VBox>
             <ComboBox fx:id="imageSelectComboBox"/>
