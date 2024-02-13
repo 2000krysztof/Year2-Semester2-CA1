@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="add color picker to the project so I can sample to the image by clicking on it">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="add pill class and rename the hello-view.fxml to main-view.fxml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>

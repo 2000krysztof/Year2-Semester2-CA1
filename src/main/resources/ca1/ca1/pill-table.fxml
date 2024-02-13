@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ca1.ca1.PillTableController"
+            prefHeight="400.0" prefWidth="200.0">
+
+    <TableView>
+        <columns>
+            <TableColumn text="Pill Name" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="pill name" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Colors" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="color" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+
+
+    </TableView>
+</VBox>
