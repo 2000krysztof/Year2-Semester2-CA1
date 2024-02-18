@@ -1,17 +1,29 @@
 package ca1.ca1;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
+import javafx.scene.paint.Color;
 
 public class PillTableController {
 
-    @FXML
-    protected void initialize(){
 
+    @FXML
+    TableView<Pill> table;
+    public void addPill(Pill pill){
+        table.getItems().add(pill);
     }
 
+    public void removePill(){
+        int index = table.getSelectionModel().getSelectedIndex();
+        table.getItems().remove(index);
+    }
 
-    public void test(){
+    public Pill getPill(){
+        return table.getSelectionModel().getSelectedItem();
+    }
 
-        System.out.printf("aubdiwubdaiubd");
+    public void addColor(Color color){
+        table.getSelectionModel().getSelectedItem().addColor(color);
+        table.refresh();
     }
 }

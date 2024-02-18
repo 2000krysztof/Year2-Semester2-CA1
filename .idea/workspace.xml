@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="add pill class and rename the hello-view.fxml to main-view.fxml">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" afterDir="false" />
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="create the pill table, Populate the Pill class to expose getter methods.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Vector3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/DisjointSetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/Vector3Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -49,19 +54,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;basicFuncitons&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JUnit.Test.executor": "Coverage",
+    "JUnit.Vector3Test.normalzie.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "basicFuncitons",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/krzysztof/Projects/JavaProjects/dataStructures2CA1",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ca1.ca1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Test">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ca1.ca1.Driver" />
       <module name="Ca1" />
@@ -69,6 +87,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="JUnit" factoryName="JUnit">
+      <module name="Ca1" />
+      <option name="PACKAGE_NAME" value="ca1.ca1" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.Test" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -126,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707575219661</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="create the pill table, Populate the Pill class to expose getter methods.">
+      <option name="closed" value="true" />
+      <created>1707838651000</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1707838651000</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,6 +176,17 @@
     <MESSAGE value="Add the Image loading functionality. Make the image of size 300 x 300." />
     <MESSAGE value="Change the Ui so that it uses HBoxes and create the ImageAnalyzer class" />
     <MESSAGE value="add color picker to the project so I can sample to the image by clicking on it" />
-    <option name="LAST_COMMIT_MESSAGE" value="add color picker to the project so I can sample to the image by clicking on it" />
+    <MESSAGE value="create the pill table, Populate the Pill class to expose getter methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="create the pill table, Populate the Pill class to expose getter methods." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StackOverflowError" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -70,17 +70,18 @@ public class MainViewController {
     }
     @FXML
     protected void toBlackAndWhite(){
-
+        imageView.setImage(ImageAnalyzer.selectedPillMask(selectedImage, pillTableController.getPill()));
     }
 
     @FXML
     protected void  addPill(){
         //TODO need to add some error handling here
         Pill pill = new Pill(pillName.getText());
+        pillTableController.addPill(pill);
     }
     @FXML
     protected void addColor(){
-
+        pillTableController.addColor(colorPicker.getValue());
     }
     @FXML
     protected void colorDisjoints(){
