@@ -10,6 +10,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.AnchorPane?>
 <VBox alignment="CENTER" spacing="5.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="ca1.ca1.MainViewController">
     <padding>
@@ -18,12 +21,19 @@
 
     <ComboBox fx:id="imageSelectComboBox"/>
     <Button text="Select Image" onAction="#addImageFromFile"/>
-    <ImageView fx:id="imageView" fitWidth="300" fitHeight="300" onMouseClicked="#chooseColor"/>
+    <VBox maxWidth="300" minHeight="300">
+
+        <Pane fx:id="imagePane" prefWidth="300" prefHeight="300" AnchorPane.rightAnchor="400" AnchorPane.leftAnchor="250">
+            <ImageView fx:id="imageView" fitWidth="300" fitHeight="300" onMouseClicked="#chooseColor" />
+        </Pane>
+    </VBox>
+
     <HBox alignment="CENTER">
         <VBox>
             <Button text="Revert Image" onAction="#revertImage"/>
             <Button text="To Black and White" onAction="#toBlackAndWhite"/>
             <Button text="Color Disjoints" onAction="#colorDisjoints"/>
+            <Button text="Display pill locations" onAction="#displayPillLocations"/>
         </VBox>
         <VBox>
             <Button text="Add Pill" onAction="#addPill"/>

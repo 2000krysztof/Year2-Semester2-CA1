@@ -8,17 +8,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class MainViewController {
 
@@ -26,6 +26,8 @@ public class MainViewController {
 
     @FXML
     ImageView imageView;
+    @FXML
+    Pane imagePane;
 
     @FXML
     ComboBox<Image> imageSelectComboBox;
@@ -59,6 +61,7 @@ public class MainViewController {
                 return file.getName();
             }
         };
+        image = ImageAnalyzer.rescaledImage(image,300,300);
         imageSelectComboBox.getItems().add(image);
         imageSelectComboBox.getSelectionModel().select(
                 imageSelectComboBox.getSelectionModel().getSelectedIndex()+1);
@@ -75,7 +78,6 @@ public class MainViewController {
 
     @FXML
     protected void  addPill(){
-        //TODO need to add some error handling here
         Pill pill = new Pill(pillName.getText());
         pillTableController.addPill(pill);
     }
@@ -84,8 +86,22 @@ public class MainViewController {
         pillTableController.addColor(colorPicker.getValue());
     }
     @FXML
-    protected void colorDisjoints(){
+    protected void colorDisjoints() throws Exception{
+        Pill pill = pillTableController.getPill();
 
+        imageView.setImage(ImageAnalyzer.coloredImageBasedOnPill(ImageAnalyzer.selectedPillMask(selectedImage,pill), pill));
+    }
+    @FXML
+    protected void displayPillLocations()throws Exception{
+        ArrayList<Rectangle> rectangles ;
+        rectangles = ImageAnalyzer.pillLocations(pillTableController.getPill());
+        for(int i = 0; i<rectangles.size();i++) {
+            Text number = new Text(String.valueOf(i));
+            number.setFill(Color.WHITE);
+            number.setX(rectangles.get(i).getX()+5);
+            number.setY(rectangles.get(i).getY()+12);
+            imagePane.getChildren().addAll(rectangles.get(i),number);
+        }
     }
     @FXML
     protected void chooseColor(MouseEvent event){

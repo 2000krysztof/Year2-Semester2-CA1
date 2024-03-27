@@ -1,5 +1,6 @@
 package ca1.ca1;
 
+import javafx.scene.image.*;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
@@ -7,8 +8,9 @@ import java.util.ArrayList;
 public class Pill {
     ArrayList<Color> colors = new ArrayList<>();
     String name;
-    double threshold = 0.98;
+    double threshold = 0.2;
 
+    DisjointSet set;
     public Pill(String pillName){
        name = pillName;
     }
@@ -39,22 +41,42 @@ public class Pill {
 
 
     private static String colorToString(Color color){
-       byte r = (byte) (color.getRed() *255);
-        byte g = (byte) (color.getGreen() *255);
-        byte b = (byte) (color.getBlue() *255);
+        int r = (int) (color.getRed() *255);
+        int g = (int) (color.getGreen() *255);
+        int b = (int) (color.getBlue() *255);
         return String.format("r: %d, g: %d, b: %d",r,g,b);
     }
     public boolean doesPixelBelongToPill(int pixel){
-        Vector3 vPixel = new Vector3(pixel);
-        vPixel.normalize();
-        for(Color color: colors){
-            Vector3 vColor = new Vector3(color);
-            vColor.normalize();
-            System.out.println(vPixel.dot(vColor));
-            if(vPixel.dot(vColor) > threshold){
+        for(Color color : colors) {
+            if(Utils.colorDifference(Utils.fromPixelArgb(pixel), color) < threshold){
                 return true;
             }
         }
         return false;
+
     }
+
+    public void scanImage(Image image) throws Exception{
+        PixelReader reader = image.getPixelReader();
+        int height = (int) image.getHeight();
+        int width = (int) image.getWidth();
+        set = new DisjointSet(width,height);
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int i = x+y*width;
+                if(reader.getArgb(x,y) != 0xFF000000){
+                    set.markAsRoot(i);
+                    if(x != 0 && set.get(i-1) != set.blankSpace){
+                        set.join(i, i-1);
+                    }
+                    if(y!= 0 && set.get(i-width)!= set.blankSpace ){
+                        set.join(i, i-width);
+                    }
+                }
+            }
+        }
+        set.denois();
+    }
+
+
 }

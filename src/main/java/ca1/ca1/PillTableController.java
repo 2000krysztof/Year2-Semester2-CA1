@@ -23,7 +23,10 @@ public class PillTableController {
     }
 
     public void addColor(Color color){
+        if(table.getSelectionModel().getSelectedItem() == null){return;}
         table.getSelectionModel().getSelectedItem().addColor(color);
         table.refresh();
     }
+
+
 }

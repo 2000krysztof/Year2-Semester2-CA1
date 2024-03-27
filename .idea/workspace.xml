@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="create the pill table, Populate the Pill class to expose getter methods.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Vector3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/DisjointSetTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/Vector3Test.java" afterDir="false" />
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="create the disjoint set and Vector3. Create tests for the disjointSet and Vector3.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/testImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/PillTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/UtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Vector3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ca1/ca1/DisjointSetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/DisjointSetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ca1/ca1/Vector3Test.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +45,12 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -54,32 +61,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.Test.executor": "Coverage",
-    "JUnit.Vector3Test.normalzie.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "basicFuncitons",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/krzysztof/Projects/JavaProjects/dataStructures2CA1",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Test.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Vector3Test.normalzie.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;basicFuncitons&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/krzysztof/Projects/JavaProjects/dataStructures2CA1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/ca1/ca1" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="ca1.ca1" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Test">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ca1.ca1.Driver" />
       <module name="Ca1" />
@@ -188,5 +198,8 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Ca1$Test.ic" NAME="Test Coverage Results" MODIFIED="1708272373139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
