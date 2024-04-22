@@ -185,18 +185,6 @@ public class ImageAnalyzer {
         return set;
     }
 
-    private static void testSaveToFile(DisjointSet set){//TODO delete this later
-        try {
-            FileOutputStream fileOut = new FileOutputStream("pillsDisjointSet.ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(set);
-            out.close();
-            fileOut.close();
-            System.out.println("Serialized data is saved in pillsDisjointSet.ser");
-        } catch (IOException i) {
-            i.printStackTrace();
-        }
-    }
 
 
 
