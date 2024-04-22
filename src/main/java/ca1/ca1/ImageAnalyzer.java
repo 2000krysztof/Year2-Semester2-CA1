@@ -6,15 +6,15 @@ import javafx.scene.image.PixelReader;
 import javafx.scene.image.PixelWriter;
 import javafx.scene.image.WritableImage;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
 public class ImageAnalyzer {
-    public static int errorCount = 0;
 
-    static Random random = new Random();
     public static int getColorIntAtCoordinates(Image image, double mouseX, double mouseY, double imageScaleX, double imageScaleY){
         double scaleFactorX = image.getWidth()/imageScaleX,
                 scaleFactorY = image.getHeight()/imageScaleY;
@@ -42,17 +42,20 @@ public class ImageAnalyzer {
         return (int)(pixel & 0xFF);
     }
 
-   public static ArrayList<Rectangle> pillLocations( Pill pill) throws Exception{
-       ArrayList<Rectangle> rectangles = new ArrayList<>(5);
+   public static ArrayList<PillBorderRectangle> pillLocations(Pill pill) throws Exception{
+       ArrayList<PillBorderRectangle> rectangles = new ArrayList<>(5);
        DisjointSet set = pill.set;
        for(int i = 0;i<set.roots.size();i++){
-           rectangles.add(set.pillBoundariesFromRoot(set.findRoot(set.roots.get(i))));
+           rectangles.add(set.pillBoundariesFromRoot(set.findRoot(set.roots.get(i)),pill));
        }
        return rectangles;
    }
 
    public static Image rescaledImage(Image original, int newWidth, int newHeight){
-       WritableImage newImage = new WritableImage(newWidth,newHeight);
+       WritableImage newImage = new WritableImage(newWidth,newHeight){
+           @Override
+           public String toString() {return original.toString();}
+       };
        PixelWriter writer = newImage.getPixelWriter();
        PixelReader reader = original.getPixelReader();
        double scaleFactorX = original.getWidth()/newWidth;
@@ -83,19 +86,37 @@ public class ImageAnalyzer {
         return writableImage;
    }
 
+    public static Image allPillsMask(Image image, List<Pill> pills){
+        WritableImage writableImage = new WritableImage((int)image.getWidth(), (int)image.getHeight());
+        PixelReader pixelReader = image.getPixelReader();
+        PixelWriter pixelWriter = writableImage.getPixelWriter();
+        for(int x = 0; x<image.getWidth(); x++){
+            for(int y = 0; y<image.getHeight();y++){
+                int color= pixelReader.getArgb(x,y);
+                for(Pill pill:pills){
+                    if(pill.doesPixelBelongToPill(color)){
+                        pixelWriter.setArgb(x,y,0xFFFFFFFF);
+                    }
+                    else{
+                        pixelWriter.setArgb(x,y,0xFF000000);
+                    }
+                }
+            }
+        }
+        return writableImage;
+    }
 
     public static Image coloredImageBasedOnPill(Image image, Pill pill) throws Exception{
         pill.scanImage(image);
         DisjointSet set = pill.set;
         WritableImage writeableImage = new WritableImage(set.width,set.height);
         PixelWriter writer = writeableImage.getPixelWriter();
-        Color[] colors = randomColors(set.roots.size());
+        Color[] colors = Utils.randomColors(set.roots.size());
         for(int y = 0; y< set.height; y++){
             for(int x = 0; x< set.width;x++){
                 int i = x + y* set.width;
                 if(set.get(i) == set.blankSpace){
                     writer.setColor(x,y, Color.BLACK);
-
                 } else {
                     try {
                         int index = set.roots.indexOf(set.findRoot(i));
@@ -114,14 +135,69 @@ public class ImageAnalyzer {
         return writeableImage;
     }
 
-    private static Color[] randomColors(int count){
-        Color[] colors = new Color[count];
-        for(int i =0; i<count;i++){
-            colors[i] =Color.rgb(random.nextInt(0,255)
-                    ,random.nextInt(0,255)
-                    ,random.nextInt(0,255));
+    public static Image coloredByPillType(Image image, List<Pill> pills){
+        WritableImage output = new WritableImage((int)image.getWidth(),(int)image.getHeight());
+        PixelWriter writer = output.getPixelWriter();
+        Image[] masks = new Image[pills.size()];
+        Color[] colors = Utils.randomColors(masks.length);
+        for(int i = 0; i<pills.size();i++){
+            masks[i] = selectedPillMask(image,pills.get(i));
         }
-        return colors;
+
+        for(int i=0;i<masks.length;i++) {
+            PixelReader reader = masks[i].getPixelReader();
+
+            for (int x = 0; x < image.getWidth(); x++) {
+                for (int y = 0; y < image.getHeight(); y++) {
+                    if(reader.getColor(x,y).equals(Color.WHITE))
+                        writer.setColor(x,y,colors[i]);
+                }
+            }
+        }
+
+
+        return output;
     }
+
+
+    public static DisjointSet scanImage(Image image, int minSize) throws Exception{
+        PixelReader reader = image.getPixelReader();
+        int height = (int) image.getHeight();
+        int width = (int) image.getWidth();
+        DisjointSet set = new DisjointSet(width,height);
+        set.setMinSize(minSize);
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                int i = x+y*width;
+                if(reader.getArgb(x,y) != 0xFF000000){
+                    set.markAsRoot(i);
+                    if(x != 0 && set.get(i-1) != set.blankSpace){
+                        set.join(i, i-1);
+                    }
+                    if(y!= 0 && set.get(i-width)!= set.blankSpace ){
+                        set.join(i, i-width);
+                    }
+                }
+            }
+        }
+        set.denois();
+
+        return set;
+    }
+
+    private static void testSaveToFile(DisjointSet set){//TODO delete this later
+        try {
+            FileOutputStream fileOut = new FileOutputStream("pillsDisjointSet.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(set);
+            out.close();
+            fileOut.close();
+            System.out.println("Serialized data is saved in pillsDisjointSet.ser");
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+    }
+
+
 
 }

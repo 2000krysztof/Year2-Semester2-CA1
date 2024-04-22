@@ -3,12 +3,13 @@ package ca1.ca1;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DisjointSet {
+public class DisjointSet implements Serializable {
     int[] data;
     int blankSpace, width, height;
-    final int threshold = 30;
+    int minSize = 30;
 
     ArrayList<Integer> roots = new ArrayList<>();
     public DisjointSet(int width, int height){
@@ -52,11 +53,6 @@ public class DisjointSet {
         data[bigger] = smaller;
     }
 
-    public boolean markAsBlank(int index){
-        if(index >= data.length){return false;}
-        data[index] = blankSpace;
-        return true;
-    }
     public boolean markAsRoot(int index){
         if(index >= data.length){return false;}
         data[index] = -1;
@@ -72,7 +68,7 @@ public class DisjointSet {
         }
     }
     private boolean isSmallerThanThreshold(int root)throws Exception{
-        return data[root] > -threshold;
+        return data[root] > -minSize;
     }
 
     void deleteDisjoint(int root){
@@ -99,17 +95,18 @@ public class DisjointSet {
         }
     }
 
-    public Rectangle pillBoundariesFromRoot(int root)throws Exception{
-        int leftMostPixel = getRootLeft(root);
+    public PillBorderRectangle pillBoundariesFromRoot(int root,Pill pill)throws Exception{
+       int leftMostPixel = getRootLeft(root);
        int x = (leftMostPixel % width) -3;
        int y = (root / width)-3;
        int rectWidth = (getRootRight(root) % width) - x +3;
        int rectHeight = getRootBottom(root, leftMostPixel) / width - y+3;
 
-       Rectangle rectangle = new Rectangle(x,y,rectWidth,rectHeight);
+       PillBorderRectangle rectangle = new PillBorderRectangle(x,y,rectWidth,rectHeight, x + y * width);
        rectangle.setFill(Color.TRANSPARENT);
        rectangle.setStroke(Color.BLUE);
        rectangle.setStrokeWidth(2);
+       rectangle.setPill(pill);
        return rectangle;
     }
 
@@ -152,12 +149,13 @@ public class DisjointSet {
                 verticalOffset += width;
                 if(offset + verticalOffset > data.length) return offset;
             }
+            if(offset%width ==width-1) return offset;
             offset++;
         }
     }
 
     private boolean validPixel(int root, int pixel)throws Exception{
-        if(pixel >= data.length){return false;}
+        if(pixel >= data.length-1){return false;}
         if(data[pixel] == blankSpace){return false;}
         return findRoot(pixel) == root;
     }
@@ -168,22 +166,12 @@ public class DisjointSet {
         return data.length;
     }
 
-    public int getX(int root){
-        return root/width;
-    }
-    public int getY(int root){
-        return root%width;
+    public int getMinSize() {
+        return minSize;
     }
 
-    public ArrayList<Integer> getRoots() {
-        return roots;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+    public void setMinSize(int minSize) {
+        if(minSize <0){return;}
+        this.minSize = minSize;
     }
 }

@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Slider?>
 <VBox alignment="CENTER" spacing="5.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="ca1.ca1.MainViewController">
     <padding>
@@ -34,19 +35,35 @@
             <Button text="To Black and White" onAction="#toBlackAndWhite"/>
             <Button text="Color Disjoints" onAction="#colorDisjoints"/>
             <Button text="Display pill locations" onAction="#displayPillLocations"/>
+            <Button text="Display all pill locations" onAction="#markAllPills"/>
+            <Button text="Display all pills" onAction="#displayAllPills"/>
         </VBox>
         <VBox>
             <Button text="Add Pill" onAction="#addPill"/>
+            <Button text="Remove Pill" onAction="#removePill"/>
             <HBox>
                 <VBox>
                     <Label text="Pill Name"/>
                     <TextField fx:id="pillName"/>
-                </VBox>
 
-                <VBox>
                     <Button text ="add Color" onAction="#addColor"/>
                     <Label text="Color"/>
                     <ColorPicker fx:id="colorPicker"/>
+                </VBox>
+                <VBox>
+                    <HBox>
+                    <Slider fx:id="thersholdSlider" max="1" showTickLabels="true" showTickMarks="true" minorTickCount="2"
+                            majorTickUnit="0.05" snapToTicks="true" onMouseDragged="#changeSliderValue"/>
+                        <Label fx:id="sliderValueLabel"/>
+                    </HBox>
+                    <Button text="set threshold" onAction="#setThreshold"/>
+                    <HBox>
+                        <Slider fx:id="minSizeSlider" max="1000" showTickLabels="true" showTickMarks="true" minorTickCount="2"
+                                majorTickUnit="10" snapToTicks="true" onMouseDragged="#changeMinSizeSliderValue"/>
+                        <Label fx:id="minSizeSliderValueLabel"/>
+                    </HBox>
+                    <Button text="set minimum size" onAction="#setMinSize"/>
+
                 </VBox>
             </HBox>
 

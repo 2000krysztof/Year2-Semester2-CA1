@@ -4,21 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="create the disjoint set and Vector3. Create tests for the disjointSet and Vector3.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/testImage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/PillTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/UtilsTest.java" afterDir="false" />
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="this is the push where I got the disjoint set working properly">
+      <change afterPath="$PROJECT_DIR$/src/benchmark/java/ca1/ca1/BenchmarkDriver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/benchmark/java/ca1/ca1/DisjointSetBenchmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/benchmark/resources/Pills.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/benchmark/resources/pillsDisjointSet.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillBorderRectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/Pills.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Vector3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ca1/ca1/DisjointSetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ca1/ca1/DisjointSetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ca1/ca1/Vector3Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -63,8 +66,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Benchmark.executor&quot;: &quot;Run&quot;,
     &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.Benchmark.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Test.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.Vector3Test.normalzie.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -74,15 +79,19 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;basicFuncitons&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/krzysztof/Projects/JavaProjects/dataStructures2CA1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/krzysztof/Projects/JavaProjects/Semester2/Ca1/src/benchmark/resources&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/benchmark/resources" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/benchmark/resources" />
       <recent name="$PROJECT_DIR$/src/main/resources/ca1/ca1" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -90,6 +99,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="Benchmark" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="ca1.ca1.BenchmarkDriver" />
+      <module name="Ca1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="ca1.ca1.Driver" />
       <module name="Ca1" />
@@ -109,16 +125,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Benchmark" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.Test" />
     </list>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-e47b9c39" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -177,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707838651000</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="this is the push where I got the disjoint set working properly">
+      <option name="closed" value="true" />
+      <created>1711551296016</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711551296016</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,7 +205,8 @@
     <MESSAGE value="Change the Ui so that it uses HBoxes and create the ImageAnalyzer class" />
     <MESSAGE value="add color picker to the project so I can sample to the image by clicking on it" />
     <MESSAGE value="create the pill table, Populate the Pill class to expose getter methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="create the pill table, Populate the Pill class to expose getter methods." />
+    <MESSAGE value="this is the push where I got the disjoint set working properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="this is the push where I got the disjoint set working properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -196,6 +215,11 @@
           <properties class="java.lang.StackOverflowError" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -19,6 +19,16 @@
                     <PropertyValueFactory property="name" />
                 </cellValueFactory>
             </TableColumn>
+            <TableColumn text="Threshold" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="threshold" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Minimum Size" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="minSize" />
+                </cellValueFactory>
+            </TableColumn>
             <TableColumn text="Colors" prefWidth="500">
                 <cellValueFactory>
                     <PropertyValueFactory property="colorsAsString" />

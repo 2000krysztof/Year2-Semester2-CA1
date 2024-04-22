@@ -9,16 +9,15 @@ public class Pill {
     ArrayList<Color> colors = new ArrayList<>();
     String name;
     double threshold = 0.2;
-
+    int minSize = 30;
     DisjointSet set;
     public Pill(String pillName){
        name = pillName;
     }
 
-    public boolean addColor(Color color){
-        if(colors.contains(color)){return false;}
+    public void addColor(Color color){
+        if(colors.contains(color)){return;}
         colors.add(color);
-        return true;
     }
 
     public void setThreshold(double threshold) {
@@ -33,6 +32,10 @@ public class Pill {
                 builder.append(" | ");
         }
        return builder.toString();
+    }
+
+    public double getThreshold() {
+        return threshold;
     }
 
     public String getName(){
@@ -57,26 +60,16 @@ public class Pill {
     }
 
     public void scanImage(Image image) throws Exception{
-        PixelReader reader = image.getPixelReader();
-        int height = (int) image.getHeight();
-        int width = (int) image.getWidth();
-        set = new DisjointSet(width,height);
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                int i = x+y*width;
-                if(reader.getArgb(x,y) != 0xFF000000){
-                    set.markAsRoot(i);
-                    if(x != 0 && set.get(i-1) != set.blankSpace){
-                        set.join(i, i-1);
-                    }
-                    if(y!= 0 && set.get(i-width)!= set.blankSpace ){
-                        set.join(i, i-width);
-                    }
-                }
-            }
-        }
-        set.denois();
+        set = ImageAnalyzer.scanImage(image,minSize);
     }
 
+   public void setMinSize(int size){
+        minSize = size;
+        if(set!=null) set.setMinSize(size);
+   }
+
+   public int getMinSize(){
+        return minSize;
+   }
 
 }
