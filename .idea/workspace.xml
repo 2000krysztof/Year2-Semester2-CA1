@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="this is the push where I got the disjoint set working properly">
-      <change afterPath="$PROJECT_DIR$/src/benchmark/java/ca1/ca1/BenchmarkDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/benchmark/java/ca1/ca1/DisjointSetBenchmark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/benchmark/resources/Pills.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/benchmark/resources/pillsDisjointSet.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillBorderRectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/Pills.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/DisjointSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/ImageAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Pill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/PillTableController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ca1/ca1/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ca1/ca1/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/main-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ca1/ca1/pill-table.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="ff99ab07-26bd-4530-982a-d8980a9b82a6" name="Changes" comment="remove todo code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,25 +46,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Benchmark.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.Benchmark.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Vector3Test.normalzie.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;basicFuncitons&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/krzysztof/Projects/JavaProjects/Semester2/Ca1/src/benchmark/resources&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Benchmark.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JUnit.Benchmark.executor": "Run",
+    "JUnit.Test.executor": "Run",
+    "JUnit.Vector3Test.normalzie.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "basicFuncitons",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/krzysztof/Projects/JavaProjects/Semester2/Ca1/src/benchmark/resources",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/benchmark/resources" />
@@ -195,7 +177,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711551296016</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add finishing touches and pills image">
+      <option name="closed" value="true" />
+      <created>1713819689917</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713819689917</updated>
+    </task>
+    <task id="LOCAL-00009" summary="remove todo code">
+      <option name="closed" value="true" />
+      <created>1713819768558</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1713819768558</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,7 +204,9 @@
     <MESSAGE value="add color picker to the project so I can sample to the image by clicking on it" />
     <MESSAGE value="create the pill table, Populate the Pill class to expose getter methods." />
     <MESSAGE value="this is the push where I got the disjoint set working properly" />
-    <option name="LAST_COMMIT_MESSAGE" value="this is the push where I got the disjoint set working properly" />
+    <MESSAGE value="Add finishing touches and pills image" />
+    <MESSAGE value="remove todo code" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove todo code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
